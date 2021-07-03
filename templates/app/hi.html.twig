@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<ul>
+  {% for tmp in contact %}
+  <li>{{tmp.fullname}} <br> {{tmp.phone}}</li>
+      
+  {% endfor %}
+</ul>
+{% endblock %}

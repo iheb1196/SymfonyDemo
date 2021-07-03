@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block body %}
+ <div class="mt-2">
+  <ul>
+    
+    {% for article in articles %}
+    <li>
+    <a href="{{path('article_route',{'id':article.id})}}">{{article.title}}</a>
+    {% if article.isnew==true %}
+        <span class="badge bg-sucess">new </span>
+    {% else %}
+        <span class="badge bg-sucess">old</span>
+    {% endif %}
+    <p>
+      <small>{{article.date |date('m/d/y')}}</small>
+    </p>
+    </li>  
+    {% endfor %}
+  </ul>
+ </div>
+{% endblock %}
